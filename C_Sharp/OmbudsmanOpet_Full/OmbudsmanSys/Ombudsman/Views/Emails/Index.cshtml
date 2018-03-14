@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ombudsman.Models.Email>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Protester.ProtesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserCpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Protester.ProtesterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserCpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmailId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmailId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmailId })
+        </td>
+    </tr>
+}
+
+</table>

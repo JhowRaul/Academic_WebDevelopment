@@ -1,0 +1,54 @@
+﻿@model IEnumerable<OmbudsmanOpet.Models.AuthorizedEmail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AuthorizedEmailId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AuthorizedEmailId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AuthorizedEmailId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section styles{
+    <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage {
+    <script src="@Url.Content("~/scripts/DataTables/jquery.dataTables.js") "></script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap4.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable({
+                "lengthMenu": [[10, 25, 50, -1], [25, 75, "All"]]
+            });
+        });
+    </script>
+}

@@ -1,0 +1,174 @@
+﻿@model OmbudsmanOpet.Models.Manifestation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div>
+        <h4>Manifestation</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <div class="row">
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ManifestationId):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ManifestationId)
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status):
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+                </div>
+
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Type)
+                    </dd>
+                </div>
+                <div class="col-md-6">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProtesterName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProtesterName)
+                    </dd>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProtesterCpf)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProtesterCpf)
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProtesterTelephone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProtesterTelephone)
+                    </dd>
+                </div>
+                <div class="col-md-6">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProtesterEmail)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProtesterEmail)
+                    </dd>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProtesterAdress)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ProtesterAdress)
+                    </dd>
+                </div>
+                <div class="col-md-3">
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SubjectMatter)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SubjectMatter)
+                    </dd>
+                </div>
+
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Attendant)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Attendant)
+                    </dd>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AttendantTelephone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AttendantTelephone)
+                    </dd>
+                </div>
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OpenDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.OpenDate)
+                    </dd>
+                </div>
+
+                <div class="col-md-3">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ClosingDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ClosingDate)
+                    </dd>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-10">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Content)
+                    </dt>
+                    <div class="col-md-auto">
+                        <dd>
+                            @Html.DisplayFor(model => model.Content, new { @class = "text-nowrap" })
+                        </dd>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AuthorizedEmails)
+                    </dt>
+                    <div class="col-md-auto">
+                        <dd>
+                            @Html.Partial("~/Views/AuthorizedEmails/_ByManifestation.cshtml", Model.AuthorizedEmails.ToList())	
+                        </dd>
+                    </div>
+                </div>
+            </div>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ManifestationId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ManifestationId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

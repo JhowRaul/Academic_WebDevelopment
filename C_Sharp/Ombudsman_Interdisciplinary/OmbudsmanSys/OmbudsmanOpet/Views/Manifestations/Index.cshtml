@@ -1,0 +1,85 @@
+﻿@model IEnumerable<OmbudsmanOpet.Models.Manifestation>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ManifestationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProtesterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectMatter)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManifestationId)
+                </td>
+                <td>
+                    @*@switch (item.Status)
+                        {
+                            case "Fechado":
+                                <i class="material-icons md-48">lock</i>
+                                break;
+                            case "":
+                                <i class="material-icons">lock_outline</i>
+                                break;
+                            default:
+                                <i class="material-icons md-36">lock_open</i>
+                                break;
+                        }*@
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProtesterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectMatter)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ManifestationId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ManifestationId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ManifestationId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section styles{
+    <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage {
+    <script src="@Url.Content("~/scripts/DataTables/jquery.dataTables.js") "></script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap4.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable({
+                "lengthMenu": [[10, 25, 50, -1], [25, 75, "All"]]
+            });
+        });
+    </script>
+}

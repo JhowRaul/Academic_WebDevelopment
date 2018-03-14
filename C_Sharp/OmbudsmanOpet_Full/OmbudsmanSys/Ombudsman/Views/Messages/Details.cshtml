@@ -1,0 +1,36 @@
+﻿@model Ombudsman.Models.Message
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manifestation.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manifestation.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateMessage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

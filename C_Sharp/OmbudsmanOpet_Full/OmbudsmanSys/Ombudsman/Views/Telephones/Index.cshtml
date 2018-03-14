@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Ombudsman.Models.Telephone>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DDI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DDD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DDD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TelephoneId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TelephoneId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TelephoneId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,162 @@
+﻿@model OmbudsmanOpet.Models.Manifestation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Manifestation</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    <div class="custom-controls">
+                        <label class="custom-control custom-radio">
+                            <input id="Status1" name="Status" type="radio" class="custom-control-input" checked>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Open</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input id="Status2" name="Status" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Closed</span>
+                        </label>
+                        <label class="custom-control custom-radio">
+                            <input id="Status3" name="Status" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Waiting</span>
+                        </label>
+                    </div>                    
+                    <!----<div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="material-icons md-48" href="#">lock</a>
+                            <a class="dropdown-item material-icons" href="#">lock_outline</a>
+                            <a class="dropdown-item material-icons md-36" href="#">lock_open</a>
+                        </div>
+                    </div>
+                        -->
+           
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <select id="Type" name="Type" class="custom-select">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Suggestion</option>
+                        <option value="2">Compliment</option>
+                        <option value="3">Complaint</option>
+                        <option value="4">Information</option>
+                    </select>
+                </div>
+        </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProtesterName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ProtesterName, new { htmlAttributes = new { @class = "form-control", placeholder = "Nome" } })
+                    @Html.ValidationMessageFor(model => model.ProtesterName, "", new { @class = "text-danger" })
+                </div>
+    
+                @Html.LabelFor(model => model.ProtesterCpf, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ProtesterCpf, new { htmlAttributes = new { @class = "form-control", placeholder = "CPF" } })
+                    @Html.ValidationMessageFor(model => model.ProtesterCpf, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProtesterTelephone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ProtesterTelephone, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefone" } })
+                    @Html.ValidationMessageFor(model => model.ProtesterTelephone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProtesterEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+               <form>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                         @Html.EditorFor(model => model.ProtesterEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "E-mail" } })
+                         @Html.ValidationMessageFor(model => model.ProtesterEmail, "", new { @class = "text-danger" })
+                       @*<label class="col-form-label" for="model => model.ProtesterEmail"></label>
+                        <input type="text" class="form-control" id="ProtesterEmail" placeholder="E-mail">*@
+                   </div>
+                </form>
+              </div>
+             
+            <div class="form-group">
+                @Html.LabelFor(model => model.ProtesterAdress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ProtesterAdress, new { htmlAttributes = new { @class = "form-control", placeholder = "Endereço Completo" } })
+                    @Html.ValidationMessageFor(model => model.ProtesterAdress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.SubjectMatter, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.SubjectMatter, new { htmlAttributes = new { @class = "form-control", placeholder = "Assunto" } })
+                    @Html.ValidationMessageFor(model => model.SubjectMatter, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.TextAreaFor(model => model.Content, new { @class = "form-control", placeholder = "Conteúdo" })
+                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Attendant, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Attendant, new { htmlAttributes = new { @class = "form-control", placeholder = "Atendente" } })
+                    @Html.ValidationMessageFor(model => model.Attendant, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.AttendantTelephone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.AttendantTelephone, new { htmlAttributes = new { @class = "form-control", placeholder = "Telefone da Atendente" } })
+                    @Html.ValidationMessageFor(model => model.AttendantTelephone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.OpenDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.OpenDate, new { htmlAttributes = new { @class = "form-control", placeholder = "A Data Gera Automaticamente" } })
+                    @Html.ValidationMessageFor(model => model.OpenDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+

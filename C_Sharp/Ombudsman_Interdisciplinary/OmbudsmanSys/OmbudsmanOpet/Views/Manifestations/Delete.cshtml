@@ -1,0 +1,126 @@
+﻿@model OmbudsmanOpet.Models.Manifestation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Manifestation</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProtesterName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProtesterName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProtesterCpf)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProtesterCpf)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProtesterTelephone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProtesterTelephone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProtesterEmail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProtesterEmail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProtesterAdress)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProtesterAdress)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SubjectMatter)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SubjectMatter)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Content)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Content)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Attendant)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Attendant)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AttendantTelephone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AttendantTelephone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OpenDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OpenDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ClosingDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ClosingDate)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>

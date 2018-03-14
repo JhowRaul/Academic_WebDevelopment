@@ -1,0 +1,36 @@
+﻿@model Ombudsman.Models.Email
+
+<div>
+    <h4>Email</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Protester.ProtesterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protester.ProtesterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserCpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserCpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmailId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

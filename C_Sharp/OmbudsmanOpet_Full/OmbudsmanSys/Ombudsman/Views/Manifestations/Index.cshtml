@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Ombudsman.Models.Manifestation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Protester.ProtesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sector.SectorDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserCpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectMatter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManifestationType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClosingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Protester.ProtesterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sector.SectorDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserCpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectMatter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManifestationType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ManifestationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ManifestationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ManifestationId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,91 @@
+﻿@model Ombudsman.Models.Manifestation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Manifestation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Protester.ProtesterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protester.ProtesterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sector.SectorDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sector.SectorDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserCpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserCpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectMatter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectMatter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManifestationType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManifestationType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ManifestationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Ombudsman.Models.Protester>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProtesterCpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProtesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProtesterGenre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProtesterCpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProtesterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProtesterGenre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProtesterId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProtesterId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProtesterId })
+        </td>
+    </tr>
+}
+
+</table>
