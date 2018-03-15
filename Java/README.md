@@ -1,3 +1,3 @@
 # Web Development 2017
-Código conceitual da disciplina Mobile(Android em 2018) no repositório: 
- https://github.com/JhowRaul/DevQuestionsAndroid
+Código da disciplina JAVA no repositório: 
+ https://github.com/JhowRaul/Ouvidoria
